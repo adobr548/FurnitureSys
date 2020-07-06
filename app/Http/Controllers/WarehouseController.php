@@ -88,6 +88,11 @@ class WarehouseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $warehouse = Warehouse::find($id);
+        if ( $warehouse != null){
+         $warehouse->delete();
+        //redirect
+        return redirect('/warehouses');
+        }
     }
 }

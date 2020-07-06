@@ -1,14 +1,15 @@
 @extends('layouts.appmain')
 
 @section('content')
-  <h1>Registruoti</h1>
+  
   <style>
   .uper {
     margin-top: 40px;
+    padding: 50px;
   }
 </style>
 <div class="card uper">
- 
+<h1>Sudaryti saskaita</h1>
   <div class="card-body">
     @if ($errors->any())
       <div class="alert alert-danger">

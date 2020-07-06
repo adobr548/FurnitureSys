@@ -13,18 +13,26 @@
 		<th>El.Pastas</th>
 		<th></th>
   </tr>
-    <?php  
-   foreach($customers as $customer){
-    echo
-    "<tr>"
-    . "<td>{$customer->id_Pirkejas}</td>"
-    . "<td>{$customer->pirkejo_pavadinimas}</td>"
-    . "<td>{$customer->adresas}</td>"
-    . "<td>{$customer->pirkejo_PVM_kodas}</td>"
-    . "<td>{$customer->telefono_nr}</td>"
-    . "<td>{$customer->el_pastas}</td>"
-    . "</tr>\n";
-    }
-    ?>
+      
+   @foreach($customers as $customer)
+    
+    <tr>
+    <td>{{$customer->id_Pirkejas}}</td>
+    <td>{{$customer->pirkejo_pavadinimas}}</td>
+    <td>{{$customer->adresas}}</td>
+    <td>{{$customer->pirkejo_PVM_kodas}}</td>
+    <td>{{$customer->telefono_nr}}</td>
+    <td>{{$customer->el_pastas}}</td>
+    <td>
+    <form method="POST" action="{{ route('customers.destroy', [$customer->id_Pirkejas]) }}">
+    {{ csrf_field() }}
+    {{ method_field('DELETE') }}
+    <button type="submit">Salinti</button>
+    </form
+    </td>
+    </tr>
+
+    @endforeach
+    
 </table>
  @endsection

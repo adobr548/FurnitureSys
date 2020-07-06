@@ -71,7 +71,8 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee = Employee::find($id);
+        return view('employeeEdit')->with('employee', $employee);
     }
 
     /**
@@ -83,7 +84,19 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [ 
+            'vardas' => 'required',
+            'pavarde' => 'required',
+            'id_Darbuotojas' => 'required'          
+            ]);
+
+            $employee = Employee::find($id);
+            $employee->vardas = $request->input('vardas');
+            $employee->pavarde = $request->input('pavarde');
+            $employee->id_Darbuotojas = $request->input('id_Darbuotojas');
+            $employee->save();
+
+            return redirect('/employees')->with('success','Irasas atnaujintas');
     }
 
     /**
@@ -94,6 +107,11 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employee = Employee::find($id);
+        if ($employee != null){
+        $employee->delete();
+        //redirect
+        return redirect('/employees');
+        }
     }
 }

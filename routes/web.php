@@ -35,3 +35,10 @@ Route::resource('accounts','AccountController');
 Route::resource('orders','OrderController');
 
 Route::delete('/furnitures/{id}','BaldaiController@destroy')->name('furnitures.destroy');
+Route::delete('/warehouses/{id}','WarehouseController@destroy')->name('warehouses.destroy');
+Route::delete('/customers/{id}','ClientController@destroy')->name('customers.destroy');
+Route::delete('/employees/{id}','EmployeeController@destroy')->name('employees.destroy');
+Route::delete('/sellers/{id}','SellerController@destroy')->name('sellers.destroy');
+Route::delete('/accounts/{id}','AccountController@destroy')->name('accounts.destroy');
+Route::delete('/contracts/{id}','AgreementController@destroy')->name('contracts.destroy');
+Route::delete('/orders/{id}','OrderController@destroy')->name('orders.destroy');

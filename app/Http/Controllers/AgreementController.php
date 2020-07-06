@@ -79,7 +79,10 @@ class AgreementController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contract = Contract::find($id);
+        $employees = Employee::all();
+        $customers = Customer::all();
+        return view('contractEdit')->with('contract', $contract)->with('employees', $employees)->with('customers', $customers);
     }
 
     /**
@@ -91,7 +94,18 @@ class AgreementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contract = Contract::find($id);
+        $contract->id_Sutartis = $request->input('id_Sutartis');
+        $contract->sutarties_data = $request->input('sutarties_data');
+        $contract->sutarties_pradzios_data = $request->input('sutarties_pradzios_data');
+        $contract->sutarties_pabaigos_data = $request->input('sutarties_pabaigos_data');
+        $contract->sutarties_tipas = $request->input('sutarties_tipas');
+        $contract->busena = $request->input('busena');
+        $contract->fk_Pirkejasid_Pirkejas= $request->input('fk_Pirkejasid_Pirkejas');
+        $contract->fk_Darbuotojasid_Darbuotojas = $request->input('fk_Darbuotojasid_Darbuotojas');
+        $contract->save();
+
+        return redirect('/contracts');
     }
 
     /**
@@ -102,6 +116,11 @@ class AgreementController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $contract = Contract::find($id);
+         if ($contract != null){
+         $contract->delete();
+         //redirect
+         return redirect('/contracts');
+         }
     }
 }

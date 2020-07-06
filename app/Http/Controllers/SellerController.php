@@ -90,6 +90,11 @@ class SellerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $seller = Seller::find($id);
+        if ($seller != null){
+        $seller->delete();
+        //redirect
+        return redirect('/sellers');
+        }
     }
 }

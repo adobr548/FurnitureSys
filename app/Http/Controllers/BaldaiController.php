@@ -96,8 +96,8 @@ class BaldaiController extends Controller
     public function edit($id)
     {
         $furniture = Furniture::find($id);
-        //return view('furnitures.edit')->with('furniture', $furniture);
-        return view('furnitureEdit')->with('furniture', $furniture);
+        $sellers = Seller::all();
+        return view('furnitureEdit')->with('furniture', $furniture)->with('sellers', $sellers);
     }
 
     /**

@@ -64,7 +64,7 @@
 
         </style>
 
-        <div class='container'>
+        <div class='container'style="padding: 30px;">
             <nav>
                 <tr>
                    <th><a href='/'> Registracija</a></th>

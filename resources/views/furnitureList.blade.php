@@ -28,7 +28,7 @@
     <td>{{$furniture->mokestis_PVM}}</td>
     <td>{{$furniture->antkainis}}</td>
     <td>
-        <a href="{{ action('BaldaiController@edit', [$furniture->id_Baldas]) }}">Redaguoti</a>
+        <a href="{{ action('BaldaiController@edit', [$furniture->id_Baldas]) }}">Redaguoti</a>    
     </td>
     <td>
     <form method="POST" action="{{ route('furnitures.destroy', [$furniture->id_Baldas]) }}">

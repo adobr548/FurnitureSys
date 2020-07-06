@@ -1,8 +1,8 @@
 @extends('layouts.appmain')
 
 @section('content')
-  <h1>Registracija</h1>
-  <div class='container'>
+  <h1 style="padding: 20px;">Registracija</h1>
+  <div class='container' style="padding: 20px;">
             <nav>
                 <tr>
                    <br><a href='/furnitures/create'> Registruoti baldus</a></br>

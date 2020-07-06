@@ -99,6 +99,11 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        if ($order != null){
+            $order->delete();
+        //redirect
+        return redirect('/orders');
+        }
     }
 }
