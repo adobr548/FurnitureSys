@@ -34,6 +34,8 @@ Route::resource('sellers','SellerController');
 Route::resource('accounts','AccountController');
 Route::resource('orders','OrderController');
 
+Route::resource('payments','PaymentController');
+
 Route::delete('/furnitures/{id}','BaldaiController@destroy')->name('furnitures.destroy');
 Route::delete('/warehouses/{id}','WarehouseController@destroy')->name('warehouses.destroy');
 Route::delete('/customers/{id}','ClientController@destroy')->name('customers.destroy');

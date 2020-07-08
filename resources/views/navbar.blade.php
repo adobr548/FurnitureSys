@@ -76,7 +76,7 @@
                    <th><a href='/sellers'> Pardavejai </a></th>
                    <th><a href='/accounts'> Saskaitos </a></th>
                    <th><a href='/orders'> Uzsakymai </a></th>
-		           <th></th>
+		           <th><a href='/payments'> Apmokejimai </a></th>
 	            </tr>
             </nav>
         </div>
